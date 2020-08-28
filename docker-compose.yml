@@ -2,20 +2,20 @@ version: '3.0'
 services:
   rasa:
     image: rasa/rasa:1.10.11-full
-  ports:
-    - "5005:5005"
-  volumes:
-    - ./:/app
-  command:
-    - run
+    ports:
+      - "5005:5005"
+    volumes:
+      - ./:/app
+    command:
+      - run
   app:
     container_name: "action_server"
-  build: 
-    context: actions
-  volumes:
-    - ./actions:/app/actions
-  ports: 
-    - "5055:5055"
+    build: 
+      context: actions
+    volumes:
+      - ./actions:/app/actions
+    ports: 
+      - "5055:5055"
   mongo:
     image: mongo
     environment:
