@@ -8,7 +8,7 @@ services:
       - ./:/app
     command:
       - run
-  app:
+  action_server:
     container_name: "action_server"
     build: 
       context: actions
