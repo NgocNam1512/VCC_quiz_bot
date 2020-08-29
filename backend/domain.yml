@@ -1,32 +1,36 @@
-intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
-
-responses:
-  utter_greet:
-  - text: "Hey! How are you?"
-
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
-
-  utter_goodbye:
-  - text: "Bye"
-
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
-
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+intents:
+- greet
+- goodbye
+- affirm
+- deny
+- praise
+- bot_challenge
+- thanks
+- tactic_quiz
+- answer_quiz
+- give_up
+entities:
+- quiz_answer
+responses:
+  utter_greet:
+  - text: Xin chào.
+  utter_goodbye:
+  - text: Hẹn gặp lại bạn nha!!
+  utter_iamabot:
+  - text: Mình là VCC Quiz Bot. Rất vui được gặp bạn.
+  utter_welcome:
+  - text: Không có gì. Rất vui vì được giúp đỡ bạn.
+  utter_thanks:
+  - text: Cảm ơn bạn. :3
+  utter_suggest_feature:
+  - buttons:
+    - payload: Tactic Quiz
+      title: Tactic Quiz
+    text: Mình có thể giúp gì cho bạn nhỉ?
+actions:
+- action_give_tactic_quiz
+- action_check_answer
+- action_give_answer

@@ -11,7 +11,8 @@
 # https://rasa.com/docs/rasa/core/actions/#custom-actions/
 
 action_endpoint:
-  url: "http://app:5055/webhook"
+  # url: "http://app:5055/webhook"
+  url: "http://localhost:5055/webhook"
 
 # Tracker store which is used to store the conversations.
 # By default the conversations are stored in memory.
@@ -25,12 +26,17 @@ action_endpoint:
 #    password: <password used for authentication>
 #    use_ssl: <whether or not the communication is encrypted, default false>
 
+# tracker_store:
+#     type: mongod
+#     url: mongodb://mongo:27017
+#     db: rasa
+#     username: rasa
+#     password: example
+
 tracker_store:
     type: mongod
-    url: mongodb://mongo:27017
-    db: rasa
-    username: rasa
-    password: example
+    url: mongodb://localhost:27017
+    db: vccquiz
 
 # Event broker which all conversation events should be streamed to.
 # https://rasa.com/docs/rasa/api/event-brokers/

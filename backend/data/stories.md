@@ -1,26 +1,8 @@
 ## happy path
 * greet
   - utter_greet
-* mood_great
-  - utter_happy
-
-## sad path 1
-* greet
-  - utter_greet
-* mood_unhappy
-  - utter_cheer_up
-  - utter_did_that_help
-* affirm
-  - utter_happy
-
-## sad path 2
-* greet
-  - utter_greet
-* mood_unhappy
-  - utter_cheer_up
-  - utter_did_that_help
-* deny
-  - utter_goodbye
+  - utter_iamabot
+  - utter_suggest_feature
 
 ## say goodbye
 * goodbye
@@ -29,3 +11,29 @@
 ## bot challenge
 * bot_challenge
   - utter_iamabot
+
+## praise
+* praise
+  - utter_thanks
+
+## thanks
+* thanks
+  - utter_welcome
+
+## tatic
+* tactic_quiz
+  - action_give_tactic_quiz
+* answer_quiz
+  - action_check_answer
+
+## tactic after wrong
+* tactic_quiz
+  - action_give_tactic_quiz
+* answer_quiz
+  - action_check_answer
+* answer_quiz
+  - action_check_answer
+
+## give up
+* give_up
+  - action_give_answer
