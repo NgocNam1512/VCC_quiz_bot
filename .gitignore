@@ -1,2 +1,4 @@
-models/
+/backend/models
 .vscode
+/backend/events*
+/backend/rasa.db*
