@@ -10,12 +10,15 @@ services:
     depends_on: 
       - rasa
       - action_server
+      - mongo
   rasa:
     container_name: "rasa_server"
     build: 
       context: backend
     ports: 
       - 5005:5005
+    depends_on:
+      - action_server
   action_server:
     container_name: "action_server"
     build: 
@@ -24,6 +27,8 @@ services:
       - ./actions:/app/actions
     ports:
       - "5055:5055"
+    depends_on:
+      - mongo
   mongo:
     image: mongo
   mongo_express:  # this service is a MongoDB UI, and is optional
