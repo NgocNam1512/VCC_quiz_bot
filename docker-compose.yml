@@ -10,8 +10,6 @@ services:
     depends_on: 
       - rasa
       - action_server
-      - mongo
-      - mongo_express
   rasa:
     container_name: "rasa_server"
     build: 
