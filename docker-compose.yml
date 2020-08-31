@@ -15,7 +15,7 @@ services:
     build: 
       context: backend
     ports: 
-      - "5005:5005"
+      - 5005:5005
   action_server:
     container_name: "action_server"
     build: 
@@ -23,7 +23,7 @@ services:
     volumes:
       - ./actions:/app/actions
     ports:
-      - "5055:5055"  
+      - 5055:5055  
   mongo:
     image: mongo
     environment:
