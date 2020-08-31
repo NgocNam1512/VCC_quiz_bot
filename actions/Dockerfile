@@ -5,16 +5,17 @@ FROM rasa/rasa-sdk:1.10.2
 WORKDIR /app
 
 # Copy any additional custom requirements, if necessary (uncomment next line)
-COPY actions/requirements-actions.txt ./
+COPY requirements-actions.txt ./
 
-# Change back to root user to install dependencies
+# The Rasa SDK image runs as non-root user by default. Hence, you have to switch
+# back to the `root` user if you want to install additional dependencies
 USER root
 
 # Install extra requirements for actions code, if necessary (uncomment next line)
-RUN pip install -r requirements-actions.txt
+RUN pip3 install -r requirements-actions.txt
 
 # Copy actions folder to working directory
-COPY ./actions /app/actions
+COPY . /app/actions
 
-# By best practices, don't run the code with root user
+# Switch back to a non-root user
 USER 1001
