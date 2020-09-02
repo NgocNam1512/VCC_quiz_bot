@@ -1,4 +1,4 @@
-FROM rasa/rasa:latest-full 
+FROM rasa/rasa:1.10.10-full 
 
 WORKDIR /app
 COPY . /app
