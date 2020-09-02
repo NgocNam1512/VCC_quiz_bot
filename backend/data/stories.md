@@ -26,14 +26,16 @@
 * answer_quiz
   - action_check_answer
 
-## tactic after wrong
+## tactic give up
+* tactic_quiz
+  - action_give_tactic_quiz
+* give_up
+  - action_give_answer
+
+## tactic give up after wrong
 * tactic_quiz
   - action_give_tactic_quiz
 * answer_quiz
   - action_check_answer
-* answer_quiz
-  - action_check_answer
-
-## give up
 * give_up
   - action_give_answer

@@ -14,6 +14,9 @@ intents:
 - give_up
 entities:
 - quiz_answer
+slots:
+  quiz_answer:
+    type: unfeaturized
 responses:
   utter_greet:
   - text: Xin chào.
@@ -30,6 +33,9 @@ responses:
     - payload: Tactic Quiz
       title: Tactic Quiz
     text: Mình có thể giúp gì cho bạn nhỉ?
+  utter_image:
+  - image: ../actions/result.png
+    text: image
 actions:
 - action_give_tactic_quiz
 - action_check_answer
