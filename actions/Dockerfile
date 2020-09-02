@@ -15,7 +15,8 @@ USER root
 RUN pip3 install -r requirements-actions.txt
 
 # Copy actions folder to working directory
-COPY . /app/actions
+COPY constants.py /app/actions/
+COPY . /app/actions/
 
 # Switch back to a non-root user
 USER 1001

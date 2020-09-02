@@ -1,4 +1,4 @@
-from constants import *
+from actions.constants import *
 from PIL import Image
 import os.path
 

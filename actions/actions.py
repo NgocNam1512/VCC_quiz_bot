@@ -7,11 +7,11 @@ from rasa_sdk.events import SlotSet
 import random
 import os
 
-from constants import *
-from fen2png import Board, DrawImage
+from actions.constants import *
+from actions.fen2png import Board, DrawImage
 from pymongo import MongoClient
 
-client = MongoClient("mongodb://localhost:27017/")
+client = MongoClient("mongodb://mongo:27017/")
 db = client.vccquiz
 quizzes = db.quizzes
 
@@ -26,10 +26,11 @@ class ActionGiveTacticQuiz(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         # choose random quiz
-        rand_id = random.randint(0,3335)
+        #max_id = quizzes.find().sort({_id:-1}).limit(1)["_id"]
+        rand_id = random.randint(0, 2)
         quiz = quizzes.find_one({"_id":rand_id})
 
-        print(quiz['fen'].split())
+        # print(quiz['fen'].split())
         fen = Board(quiz['fen'].split())
         if fen.isvalid:
             fmt = "png"
